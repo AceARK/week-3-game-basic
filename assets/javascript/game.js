@@ -20,27 +20,37 @@ document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	console.log("User chose " + userGuess);
 
-			if(userGuess === computerChoice) {
-				wins++;
-				console.log("guessed right");
-				computerChooses();
-				console.log("New computer choice" + computerChoice);
-				guesses = 2;
-				console.log("If block - wins: " + wins + "Losses: " + losses);
-			}
-			else {
-				guesses--;
-				console.log("guessed wrong");
-				losses++;
-				console.log("Else block - losses: " + losses + "Wins: " + wins);
+			for(i=guesses; i>0; i--) {
+				
+				if(userGuess === computerChoice) {
+					wins++;
+					console.log("guessed right");
+					// computerChooses();
+					// console.log("New computer choice" + computerChoice);
+					// guesses = 2;
+					console.log("If block - wins: " + wins + "Losses: " + losses);
+					break;
+				}
+
+				else {
+					console.log("guessed wrong");
+					console.log("Else block - losses: " + losses + "Wins: " + wins);
+					guesses--;
+					console.log("Guesses left: " + guesses);
+				}
 			}
 
-			if (guesses == 0) {
-				console.log("You lose. Next letter computer chose " + computerChoice);
-				computerChooses();
-				guesses = 2;
-				console.log("reset If block - Losses: " + losses + "Wins: " + wins);
-			}
+			guesses = 2;
+			computerChooses();
+			console.log("for iteration over. computer choice " + computerChoice);
+			
+			// if (guesses == 0) {
+			// 	losses ++;
+			// 	console.log("You lose. Next letter computer chose " + computerChoice);
+			// 	// computerChooses();
+			// 	guesses = 2;
+			// 	console.log("reset If block - Losses: " + losses + "Wins: " + wins);
+			// }
 };
 
 function computerChooses() {
