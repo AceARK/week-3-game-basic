@@ -1,7 +1,7 @@
 // Initializing letters array with all possible choices for computer to choose from
-var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
-               "p","q","r","s","t","u","v","w","x","y","z"
-               ];
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
+    "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+];
 
 // Initializing variables to store user game stats
 var wins = 0;
@@ -16,46 +16,60 @@ console.log("Computer has chosen " + computerChoice);
 // When user presses any key, invoke this function 
 document.onkeyup = function(event) {
 
-	// Catch, convert to lowercase, and store user's input in a variable
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-	console.log("User chose " + userGuess);
+    // Catch, convert to lowercase, and store user's input in a variable
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    console.log("User chose " + userGuess);
+    // Showing user's choice on HTML page
+    document.getElementById("userGuesses").innerHTML = userGuess;
 
-				
-				if(userGuess === computerChoice) {
-					wins++;
-					console.log("guessed right");
-					// computerChooses();
-					// console.log("New computer choice" + computerChoice);
-					guesses = 8;
-					console.log("If block - wins: " + wins + "Losses: " + losses);
-					computerChooses();
-					console.log("User won. computer's new choice " + computerChoice);
-				}
+    // Checking user's guessed letter against computer's
+    // If equal...
+    if (userGuess === computerChoice) {
 
-				else {
-					console.log("guessed wrong");
-					// console.log("Else block - losses: " + losses + "Wins: " + wins);
-					guesses--;
-					console.log("Guesses left: " + guesses);
-					// var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-					// console.log("User chose " + userGuess);
-					if (guesses==0) {
-						losses++;
-						console.log("guesses 0 block - wins: " + wins + "Losses: " + losses);
-						guesses=8;
-						computerChooses();
-						console.log("Computer chose new " + computerChoice);
-						return;
-					}
-					else {
-						return;
-					}
-				}
-				
-		
-}	
+        // Update wins, reset guesses left, print both to html, computer chooses letter for next set
+        wins++;
+        console.log("guessed right");
+        guesses = 8;
+        document.getElementById("userWins").innerHTML = wins;
+        document.getElementById("guessesLeft").innerHTML = guesses;
+        computerChooses();
+        console.log("User won. computer's new choice " + computerChoice);
+
+    } 
+    	// If not equal...
+    	else {
+
+    		// Decrement guesses left and update it to html
+	        console.log("guessed wrong");
+	        guesses--;
+	        document.getElementById("guessesLeft").innerHTML = guesses;
+
+	        // If no guesses left...
+	        if (guesses == 0) {
+
+	        	// Increment losses, reset guesses left, update both to html, computer letter for next set
+	            losses++;
+	            document.getElementById("userLosses").innerHTML = losses;
+	            console.log("guesses 0 block - wins: " + wins + "Losses: " + losses);
+	            guesses = 8;
+	            document.getElementById("guessesLeft").innerHTML = guesses;
+	            computerChooses();
+	            console.log("Computer chose new " + computerChoice);
+	            // Return control to wait for user key press for next set
+	            return;
+
+        	} // If guesses left...
+        	  else {
+        	  	// Return control to wait for user key press
+            	return;
+        	}
+    }
+
+
+}
 
 function computerChooses() {
-	computerChoice = letters[Math.floor(Math.random()*letters.length)];
-	return computerChoice;
+    computerChoice = letters[Math.floor(Math.random() * letters.length)];
+    return computerChoice;
+
 }
