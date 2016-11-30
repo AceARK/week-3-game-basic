@@ -6,7 +6,7 @@ var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
 // Initializing variables to store user game stats
 var wins = 0;
 var losses = 0;
-var guesses = 2;
+var guesses = 8;
 var computerChoice = "";
 
 // Computer chooses a random letter
@@ -20,38 +20,40 @@ document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	console.log("User chose " + userGuess);
 
-			for(i=guesses; i>0; i--) {
 				
 				if(userGuess === computerChoice) {
 					wins++;
 					console.log("guessed right");
 					// computerChooses();
 					// console.log("New computer choice" + computerChoice);
-					// guesses = 2;
+					guesses = 8;
 					console.log("If block - wins: " + wins + "Losses: " + losses);
-					break;
+					computerChooses();
+					console.log("User won. computer's new choice " + computerChoice);
 				}
 
 				else {
 					console.log("guessed wrong");
-					console.log("Else block - losses: " + losses + "Wins: " + wins);
+					// console.log("Else block - losses: " + losses + "Wins: " + wins);
 					guesses--;
 					console.log("Guesses left: " + guesses);
+					// var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+					// console.log("User chose " + userGuess);
+					if (guesses==0) {
+						losses++;
+						console.log("guesses 0 block - wins: " + wins + "Losses: " + losses);
+						guesses=8;
+						computerChooses();
+						console.log("Computer chose new " + computerChoice);
+						return;
+					}
+					else {
+						return;
+					}
 				}
-			}
-
-			guesses = 2;
-			computerChooses();
-			console.log("for iteration over. computer choice " + computerChoice);
-			
-			// if (guesses == 0) {
-			// 	losses ++;
-			// 	console.log("You lose. Next letter computer chose " + computerChoice);
-			// 	// computerChooses();
-			// 	guesses = 2;
-			// 	console.log("reset If block - Losses: " + losses + "Wins: " + wins);
-			// }
-};
+				
+		
+}	
 
 function computerChooses() {
 	computerChoice = letters[Math.floor(Math.random()*letters.length)];
