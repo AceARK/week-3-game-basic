@@ -2,28 +2,39 @@
 <html>
 <head>
 	<title>Psychic game</title>
+	<link href="https://fonts.googleapis.com/css?family=Mogra" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
 	<script src="assets/javascript/game.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<h1>The Psychic Game</h1>
-		<div class="rules">
-		<h3>Hello! Guess what letter I'm thinking of.</h3>
-		<h3>Rules: </h3>
-		<ol>
-			<li>Press a letter on your keyboard to guess.</li>
-			<li>You have 10 guesses per set.</li>
-			<li>Your wins go up if you guess my letter.</li>
-			<li>Your losses go up if you exhaust your guesses before guessing my letter.</li>
-		</ol>
-		<p>So let's see if you're a psychic!</p>
+	<div class="intro container-fluid">
+		<div class="row">
+			<div class="col-md-9 col-sm-8">
+				<h1 id="heading">The Psychic Game</h1>
+				<div class="rules">
+					<h3><span id= "text1">You have been chosen</span><span id="text2"> to see into the computer's mind.</span></h3>
+					<h3><span id="text3">The computer has chosen a letter. Read it's mind and prove you're the psychic we've been waiting for... </span></h3>
+					<p id="text4">Press keys on your keyboard to divine. You have 10 divinations.</p>
+				</div>
+			</div>
+			
+			<div class="game col-md-3 col-sm-4 text-center">
+				<h3>Wins: <span class="gameStats" id="userWins"> </span></h3>
+				<h3>Losses: <span class="gameStats" id="userLosses"></span></h3>
+				<h3>Guesses left: <span class="gameStats" id="guessesLeft"></span></h3>
+				<h3>Your divinations so far: </h3><span class="gameStats" id="userGuesses"></span></p>
+			</div>
+		</div>
+		<div class="row messages text-center">
+			<div class="message">
+				<p id="result"><p>
+				<p id="message1"></p>
+				<p id="message2"></p>
+			</div>
+		</div>
 	</div>
-
-	<div class="game">
-		<h3>Wins: </h3><span id="userWins"> </span>
-		<h3>Losses: </h3><span id="userLosses"></span>
-		<h3>Guesses left: </h3><span id="guessesLeft"></span>
-		<h3>Your guesses so far: </h3><span id="userGuesses"></span></p>
-	</div>
-
 </body>
 </html>

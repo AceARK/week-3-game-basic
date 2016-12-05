@@ -1,0 +1,134 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: black url(../images/psychicbg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.intro {
+	color: white;
+	margin-left: 30px;
+	margin-top: 30px;
+	font-family: 'Mogra', cursive;
+}
+
+h1 {
+	margin-left: 10px;
+	text-shadow: 5px 5px 10px #d1c4c4;
+	font-size: 60px;
+}
+
+h3 {
+	text-shadow: 3px 3px 8px #d1c4c4;
+	font-size: 25px;
+}
+
+#text4 {
+	margin-top: 30px;
+	color: #d1c4c4;
+	font-size: 20px;
+}
+
+.game {
+	width: 450px;
+	height: 250px;
+	color: #efe6e6;
+	border: 1px dotted #a099d9;
+}
+
+.gameStats {
+	color: white;
+	text-shadow: 3px 3px 8px #d1c4c4;
+	font-size: 25px;
+}
+
+.messages {
+	width: 450px;
+	height: 250px;
+	font-size: 30px;
+	position: absolute;
+	z-index: 3;
+	top: 750px;
+	left: 740px;
+	color: white;
+	text-shadow: 2px 2px 6px #3f2828;
+}
+
+@media (min-width: 1700px) and (max-width: 1900px) {
+	.messages {
+		top: 650px;
+		left: 640px;
+	}
+
+}
+
+@media (min-width: 1500px) and (max-width: 1699px)  {
+	.messages {
+		top: 650px;
+		left: 590px;
+		font-size: 25px;
+	}
+
+}
+
+@media (min-width: 1500px) and (max-width: 1699px)  {
+	.messages {
+		top: 650px;
+		left: 570px;
+		font-size: 25px;
+	}
+
+}
+
+@media (max-width: 1500px) {
+	body {
+		background-color: black;
+	}
+
+	.messages {
+		margin-top: 50px;
+		position: static;
+		font-size: 25px;
+		border: 2px solid #d1c4c4;
+		padding: 30px;
+		color: #efe6e6;
+		text-shadow: 3px 3px 8px #d1c4c4;
+	}
+
+
+	.game {
+		margin-top: 100px;
+		width: 450px;
+		height: 250px;
+		color: #efe6e6;
+		border: 2px solid #d1c4c4;
+	}
+	.rules {
+		margin-top: 200px;
+	}
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+}
+
+
