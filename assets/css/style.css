@@ -53,7 +53,7 @@ h3 {
 
 .messages {
 	width: 450px;
-	height: 240px;
+	height: 300px;
 	font-size: 29px;
 	position: absolute;
 	z-index: 3;
@@ -63,6 +63,7 @@ h3 {
 	text-shadow: 2px 2px 6px #3f2828;
 }
 
+/* Updating bg image and placement of message div */
 @media (min-width: 1700px) and (max-width: 1900px) {
 	.messages {
 		top: 650px;
@@ -106,26 +107,6 @@ h3 {
 	.rules {
 		margin-top: 200px;
 	}
-}
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-
 }
 
 
