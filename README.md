@@ -1,7 +1,6 @@
 # week-3-game-basic
 
 Psychic Game
-
 ------------------------------------------
 
 Test your psychic powers of divination with this simply psychic game.
