@@ -100,7 +100,6 @@ h5 {
 		margin-top: 50px;
 		position: static;
 		font-size: 25px;
-		border: 2px solid #d1c4c4;
 		padding: 30px;
 		color: #efe6e6;
 		text-shadow: 3px 3px 8px #d1c4c4;
@@ -148,8 +147,8 @@ h5 {
 	.messages {
 		width: 300px;
 		height: 220px;
-		margin-top: 70px;
-		margin-left: 450px;
+		margin-top: 61px;
+		margin-left: 425px;
 		font-size: 20px;
 		padding: 10px;
 	}
@@ -164,6 +163,3 @@ h5 {
 		font-size: 20px;
 	}
 }
-
-
-
